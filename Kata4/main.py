@@ -4,9 +4,10 @@ screen_width = 1280
 screen_height = 960
 
 # Colors
+white_color = (255, 255, 255)
 back_color = (200,200,200)
 light_gray = pygame.Color('grey12')
-white_color = (255, 255, 255)
+
 
 pygame.init()
 clock = pygame.time.Clock()
@@ -40,9 +41,8 @@ def mover_bola():
 
     bola.top += speed_bola_x
     bola.left += speed_bola_y
-
-rectangulo = pygame.rect(10,10,50,50)
-bola = pygame.rect(50,10,50,50)
+rectangulo = pygame.Rect(10,10,50,50)
+bola = pygame.Rect(50,10,50,50)
 
 speed = 0
 speed_bola_x = 3
@@ -64,7 +64,7 @@ while True:
     mover_bola()
 
     pygame.draw.rect(screen,white_color,rectangulo)
-    pygame.draw.Ellipse(screen, white_color, bola)
+    pygame.draw.ellipse(screen, white_color, bola)
 
     pygame.display.flip()
     clock.tick(60)
